@@ -1,16 +1,15 @@
-﻿/* CSIS2664, 2023
- * Test 1, Question 5
- * P Blignaut
- * August 2023
+﻿/* CSIS2664, 2025
+ * Class test 2, Question 4
+ * Student number:2020536070
+ * Surname, Initials: NTSHELE A
  */
-
 
 
 using System;
 
 namespace Bikes
 {
-    [Flags] enum Purpose { Tarmac = 1, Gravel = 2, Offroad = 4, City = 8, LongDistance = 16 }
+    [Flags] enum Purpose { Tarmac = 1, Gravel=2, Offroad=4, City=8, LongDistance=16 }
     [Flags] enum WheelsTyres { Large=1, Narrow=2, Wide=4, Knobby=8, MediumWidth=16, MediumSize=32, Slick=64, Grooves=128 }
     [Flags] enum Suspension { None=1, Front=2, Back=4, OptionalFront=8, OptionalBack=16 }
     [Flags] enum Gears { HighRatio=1, WideRange=2, LowRange=4 }

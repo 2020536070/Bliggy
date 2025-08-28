@@ -1,9 +1,8 @@
 ﻿/* CSIS2664, 2023
  * Test 1, Question 5
- * P Blignaut 2079034130
- * August 2023
+ * Student number:2020536070
+ * Surname, Initials: Ntshele A
  */
-
 
 using System;
 using System.Windows.Forms;
@@ -16,26 +15,19 @@ namespace Bikes
         {
             InitializeComponent();
 
-            //Director
-            Director director = new Director();
-
             //Build bike types
-            IBikeBuilder roadBikeBuilder = new RoadBikeBuilder();
-            director.BuildBike(roadBikeBuilder);
+            IBikeBuilder roadBikeBuilder = new RoadbikeBuilder();
             Biketype roadBike = roadBikeBuilder.GetBiketype();
 
             IBikeBuilder mountainBikeBuilder = new MountainbikeBuilder();
-            director.BuildBike(mountainBikeBuilder);
             Biketype mountainBike = mountainBikeBuilder.GetBiketype();
 
             IBikeBuilder commuterBikeBuilder = new CommuterbikeBuilder();
-            director.BuildBike(commuterBikeBuilder);
             Biketype commuterBike = commuterBikeBuilder.GetBiketype();
 
             IBikeBuilder touringBikeBuilder = new TouringbikeBuilder();
-            director.BuildBike(touringBikeBuilder);
             Biketype touringBike = touringBikeBuilder.GetBiketype();
-            
+
             //Add types to listbox
             lstbxTypes.Items.Add(roadBike);
             lstbxTypes.Items.Add(mountainBike);

@@ -1,7 +1,7 @@
-﻿/* CSIS2664, 2023
- * Test 1, Question 5
- * P Blignaut 2079034130
- * August 2023
+﻿/* CSIS2664, 2025
+ * Class test 2, Question 4
+ * Student number:2020536070
+ * Surname, Initials: NTSHELE A
  */
 
 namespace Bikes
@@ -9,8 +9,5 @@ namespace Bikes
     interface IBikeBuilder
     {
         Biketype GetBiketype();
-        void SetBasics();
-        void SetRider();
-        void SetAccessories();
     } //IBikeBuilder
 } //namespace

@@ -1,9 +1,8 @@
-﻿/* CSIS2664, 2023
- * Test 1, Question 5
- * P Blignaut 2079034130
- * August 2023
+﻿/* CSIS2664, 2025
+ * Class test 2, Question 4
+ * Student number: 2020536070
+ * Surname, Initials: Ntshele A
  */
-
 
 namespace Bikes
 {
@@ -16,12 +15,10 @@ namespace Bikes
             bikeType = new Biketype();
             bikeType.Type = type;
             bikeType.Purpose = purpose;
-            //Remove SetAttributes
+            SetAttributes();
         } //ctor
 
-        public abstract void SetBasics(); //Suspension, Wheels & Tyres, Gears
-        public abstract void SetRider();  //Seating, Handles
-        public abstract void SetAccessories();
+        protected abstract void SetAttributes();
 
         public Biketype GetBiketype()
         {
@@ -29,97 +26,65 @@ namespace Bikes
         } //ctor
     } //ABikeBuilder
 
-    class RoadBikeBuilder : ABikeBuilder
+    class RoadbikeBuilder : ABikeBuilder
     {
-        public RoadBikeBuilder() : base("Road bike", Purpose.Tarmac) { }
+        public RoadbikeBuilder() : base("Road bike", Purpose.Tarmac) { }
 
-        public override void SetBasics()
-        {
-            bikeType.Suspension = Suspension.None;
-            bikeType.WheelsTyres = WheelsTyres.Large | WheelsTyres.Narrow | WheelsTyres.Slick;
-            bikeType.Gears = Gears.HighRatio;
-        }
-
-        public override void SetRider()
+        protected override void SetAttributes()
         {
             bikeType.Seating = Seating.Aerodynamic;
             bikeType.Handles = Handles.Dropped;
-        }
-
-        public override void SetAccessories()
-        {
+            bikeType.Suspension = Suspension.None;
+            bikeType.WheelsTyres = WheelsTyres.Large | WheelsTyres.Narrow | WheelsTyres.Slick;
+            bikeType.Gears = Gears.HighRatio;
             bikeType.Accessories = Accessories.Water;
-        } //SetAccessories
-
+        } //SetAttributes
     } //class RoadBikeBuilder
 
     class MountainbikeBuilder : ABikeBuilder
     {
         public MountainbikeBuilder() : base("Mountin bike", Purpose.Gravel | Purpose.Offroad) { }
 
-        public override void SetBasics()
+        protected override void SetAttributes()
         {
             bikeType.Suspension = Suspension.Front | Suspension.OptionalBack;
             bikeType.WheelsTyres = WheelsTyres.MediumSize | WheelsTyres.Wide | WheelsTyres.Knobby;
             bikeType.Gears = Gears.WideRange;
-        }
-
-        public override void SetRider()
-        {
             bikeType.Seating = Seating.Neutral;
             bikeType.Handles = Handles.Flat | Handles.Wide;
-        }
-
-        public override void SetAccessories()
-        {
             bikeType.Accessories = Accessories.Water | Accessories.Pump;
-        } //SetAccessories
-    } //MountainbikeBuilder
+        } //SetAttributes
+
+    } //RoadbikeBuilder
 
     class CommuterbikeBuilder : ABikeBuilder
     {
         public CommuterbikeBuilder() : base("Commuter bike", Purpose.City) { }
 
-        public override void SetBasics()
+        protected override void SetAttributes()
         {
             bikeType.Suspension = Suspension.OptionalFront;
             bikeType.WheelsTyres = WheelsTyres.MediumSize | WheelsTyres.MediumWidth | WheelsTyres.Grooves;
             bikeType.Gears = Gears.LowRange;
-        }
-
-        public override void SetRider()
-        {
             bikeType.Seating = Seating.Upright;
             bikeType.Handles = Handles.Flat | Handles.Inward;
-        }
-
-        public override void SetAccessories()
-        {
             bikeType.Accessories = Accessories.Pump;
-        } //SetAccessories
+        } //SetAttributes
     } //CommuterbikeBuilder
 
     class TouringbikeBuilder : ABikeBuilder
     {
         public TouringbikeBuilder() : base("Touring bike", Purpose.LongDistance) { }
 
-        public override void SetBasics()
+        protected override void SetAttributes()
         {
             bikeType.Suspension = Suspension.OptionalBack;
             bikeType.WheelsTyres = WheelsTyres.MediumSize | WheelsTyres.MediumWidth | WheelsTyres.Grooves;
             bikeType.Gears = Gears.WideRange;
-        }
-
-        public override void SetRider()
-        {
+            bikeType.Accessories = Accessories.Water | Accessories.Pump | Accessories.Extras;
             bikeType.Seating = Seating.Neutral;
             bikeType.Handles = Handles.Flat;
-        }
-
-        public override void SetAccessories()
-        {
-            bikeType.Accessories = Accessories.Water | Accessories.Pump | Accessories.Extras;
-        } //SetAccessories
+        } //SetAttributes
     } //TouringbikeBuilder
 
 } //namespace

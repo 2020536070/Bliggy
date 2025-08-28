@@ -1,19 +1,10 @@
-﻿/* CSIS2664, 2023
- * Test 1, Question 5
- * P Blignaut
- * August 2023
+﻿/* CSIS2664, 2025
+ * Class test 2, Question 4
+ * Student number:2020536070
+ * Surname, Initials: NTSHELE A
  */
 
-namespace Bikes
+class Director
 {
-    class Director
-    {
-        public void BuildBike(IBikeBuilder bikeBuilder)
-        {
-            bikeBuilder.SetBasics();
-            bikeBuilder.SetRider();
-            bikeBuilder.SetAccessories();
-        } //BuildBike
-
-    } //class Director
-}
+    
+} 
